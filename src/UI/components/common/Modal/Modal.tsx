@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react'
+import { ModalBody } from './Modal-styled'
 
 interface IModal {
     title?: string
@@ -27,18 +28,20 @@ export const Modal: React.FC<IModal> = ({title, btnText, children}) => {
             {
                 displayMode && (
                     <div id="mypopup" className="popup">
-                        <header className="popup__header">
-                            {
-                                title &&
+                        <ModalBody>
+                            <header className="popup__header">
+                                {
+                                    title &&
                                     <h2 title="Форма отправки сообщения мне в телеграмм">
                                         {title}
                                     </h2>
-                            }
-                            <span id="close" onClick={handleClose}>&times;</span>
-                        </header>
-                        <div>
-                            {children}
-                        </div>
+                                }
+                                <span id="close" onClick={handleClose}>&times;</span>
+                            </header>
+                            <div>
+                                {children}
+                            </div>
+                        </ModalBody>
                     </div>
                 )
             }

@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import 'normalize.css'
+import 'materialize-css'
+import {Navigation} from './UI/components/Navigation'
+import {Global} from '@emotion/react'
+import {getTheme} from './App-styled'
+import {useStoreState} from '@proscom/prostore-react'
+import {themeStore} from './BLL/models/theme'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App: React.FC = () => {
+
+    const theme = useStoreState(themeStore)
+
+    return (
+        <>
+            <Global styles={getTheme(theme)}/>
+            <div className="App">
+                <Navigation/>
+            </div>
+        </>
+    )
+
 }
 
-export default App;
+export default App
