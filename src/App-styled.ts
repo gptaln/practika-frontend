@@ -9,7 +9,7 @@ export const getTheme = (theme: Theme) => {
 
     return css`
 
-      html {
+      *, *:before, *:after {
         box-sizing: border-box;
       }
       body {
@@ -175,6 +175,9 @@ export const getTheme = (theme: Theme) => {
         overflow: auto;
         -webkit-backdrop-filter: blur(5px);
         backdrop-filter: blur(5px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       h2{
         cursor: help;
@@ -219,6 +222,18 @@ export const getTheme = (theme: Theme) => {
         color:${themeColors.BACKGROUND_COLOR};
         background-color: ${themeColors.PRIMARY_COLOR};
       }
+      .popup__send:disabled{
+        color: #aaa;
+        border-color: #aaa
+      }
+      .popup__send:disabled{
+        margin-top: 40px;
+        padding: 10px 30px;
+        background-color: transparent;
+        color: #aaa;
+        border-color: #aaa;
+        cursor: not-allowed;
+      }
 
       #close{
         color:#aaa;
@@ -240,17 +255,6 @@ export const getTheme = (theme: Theme) => {
       label{
         padding-left: 10px;
       }
-      input[type=text]:not(.browser-default):focus:not([readonly]){
-        border-bottom: 1px solid #cd38f5;
-        padding: 0 15px;
-        width: 93%;
-      }
-      input[type=text]:not(.browser-default){
-        margin: 0 0 15px 0;
-      }
-      input::placeholder{
-        padding: 0 15px;
-      }
 
 
       .popup__header{
@@ -270,10 +274,8 @@ export const getTheme = (theme: Theme) => {
       .popup__content{
         position: relative;
         background-color: ${themeColors.BACKGROUND_COLOR};
-        margin: auto;
         padding: 0;
         border: 1px solid ${themeColors.TEXT_SECONDARY_COLOR};
-        width: 80%;
         box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
         animation-name: animatetop;
         animation-duration: .4s;

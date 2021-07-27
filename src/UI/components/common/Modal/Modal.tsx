@@ -1,5 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react'
-import { ModalBody } from './Modal-styled'
+import React, {useState} from 'react'
+import {ModalBody} from './Modal-styled'
 
 interface IModal {
     title?: string

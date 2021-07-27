@@ -4,7 +4,7 @@ import whatsappImage from '../../../assets/img/whatsapp.svg'
 import instagramImage from '../../../assets/img/instagram.svg'
 import {Modal} from '../common/Modal/Modal'
 import avatar from '../../../assets/img/avatar.jpg'
-import {ContactsForm} from './ContactsForm'
+import {ContactsForm} from './ContactsForm/ContactsForm'
 
 export const HomeContent: React.FC = () => {
 
